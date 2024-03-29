@@ -1,0 +1,12 @@
+<ul style="list-style: none;">
+    {% for item in items %}
+
+    <li>{{ item }}
+        {% if user.is_superuser %}
+        <a href="{% url endpoint+'_update' pk=item.pk %}">Edit</a>
+        {% endif %}
+        <a href="{% url endpoint+'_detail' pk=item.pk %}">Edit</a>
+
+    </li>
+    {% endfor %}
+</ul>
